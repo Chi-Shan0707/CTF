@@ -7,4 +7,4 @@ for ch in plaintext:
     idx = alphabet.index(ch)
     ct += mapping[idx]
 
-print ct
+print(ct)

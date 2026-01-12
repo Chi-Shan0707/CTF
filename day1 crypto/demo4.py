@@ -41,3 +41,5 @@ res=""
 for i in range(8):
     res+=hex(H[i])[2:].zfill(8)
 assert res==ans
+print("data hex:", data.hex())
+print("SHA256 OK - digest:", res)
