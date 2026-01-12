@@ -1,0 +1,13 @@
+https://cocalc.com/projects/37c30dbd-9e78-4490-9360-5eb287d75830/files/2025-10-25-file-1.ipynb
+k=114514
+p=998244353
+a=0
+b=4
+x=0
+y=-2
+F = GF(p)
+E = EllipticCurve(F, [a, b])
+G = E(x, y)
+Q = k * G
+print(Q)
+print(Q.x(),Q.y())

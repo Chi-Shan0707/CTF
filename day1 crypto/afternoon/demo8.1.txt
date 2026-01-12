@@ -1,0 +1,14 @@
+R.<x,y,z> = QQ[]
+cubic = 4*(x+y)*(y+z)*(z+x) - x*(x+y)*(z+x) - y*(x+y)*(y+z) - z*(y+z)*(z+x)
+E = EllipticCurve_from_cubic(cubic, morphism=False)
+f = EllipticCurve_from_cubic(cubic, morphism=True)
+finv = f.inverse()
+G = E.gens()[0]
+for i in range(1,100):
+    x,y=finv(i*G)[0:2]
+    if x>0 and y>0:
+        z=lcm(x.denominator(),y.denominator())
+        x*=z
+        y*=z
+        break
+print({'x':x,'y':y,'z':z})
